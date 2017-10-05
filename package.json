@@ -6,14 +6,17 @@
   "dependencies": {
     "connect": "^3.6.5",
     "express": "^4.16.1",
+    "express-generator": "^4.15.5",
     "fs": "0.0.1-security",
     "http": "0.0.0",
     "mongoose": "^4.12.0",
+    "path": "^0.12.7",
     "watson-developer-cloud": "^2.39.2"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node test.js"
   },
   "author": "",
   "license": "ISC"

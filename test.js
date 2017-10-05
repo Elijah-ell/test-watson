@@ -5,7 +5,7 @@ var http = require('http');
 var fs = require('fs');
 var connect = require('connect');
 var express = require('express');
-
+var path = require('path');
 // var personality_insights = watson.personality_insights({
 //   username: "dc6923d5-decf-4bbb-8c3b-c82678cc4d0e",
 //   password: "OUXdjZZ7MVBh",
@@ -33,10 +33,11 @@ function onRequest(request, response){
 		response.end();
 	}
 }
-
-app.get('/forum', (request, response) => {
-  response.send('Hello from Express!')
-})
+app.set('views', __dirname + '/view');
+app.get('/',function(req,res){
+  res.render(path.join(__dirname+'/view/index.html'));	//__dirname => absolute path
+  //__dirname : It will resolve to your project folder.
+});
 
 app.listen(8888, (err) => {
   if (err) {
@@ -45,6 +46,7 @@ app.listen(8888, (err) => {
 
   console.log(`server is listening on ${8888}`)
 })
+
 //http.createServer(onRequest).listen(8888);
 
 
